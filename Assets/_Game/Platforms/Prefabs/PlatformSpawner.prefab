@@ -77,9 +77,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Platformgenerator
   myChannel: 1
-  maxMidi: 70
-  minMidi: 30
-  yMax: 17
+  maxMidi: 72
+  minMidi: 48
+  yMax: 18
   yMin: 0
   minPlatformSize: 0.5
   xOffset: 10

@@ -78,14 +78,17 @@ public class Platformgenerator : MonoBehaviour
 
     private void CreatePlatform(int note)
     {
-        float height = (note - minMidi) * increments;
+        //float height = (note - minMidi) * increments;
         creatingPlatform = true;
         currentPlatformSize = 0f;
         Debug.Log($"create a platform: {origin.position}");
 
+        float t = (float)(note - minMidi) / (maxMidi - minMidi);
+        float yPos = Mathf.Lerp(yMin, yMax, t);
+
         Vector3 spawnPos = new Vector3(
             origin.position.x + xOffset,
-            origin.position.y + height - ((yMax - yMin)/2),
+            yPos,
             origin.position.z);
 
         GameObject currentPlatform =  Instantiate(platform, spawnPos, Quaternion.identity);
