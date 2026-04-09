@@ -4970,20 +4970,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7248022408201706359, guid: 39e3418d6b9e6b64e982eff22394e99a, type: 3}
       propertyPath: yMax
-      value: 23
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7248022408201706359, guid: 39e3418d6b9e6b64e982eff22394e99a, type: 3}
+      propertyPath: yMin
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 7248022408201706359, guid: 39e3418d6b9e6b64e982eff22394e99a, type: 3}
       propertyPath: origin
       value: 
       objectReference: {fileID: 9073657876681081880}
-    - target: {fileID: 7248022408201706359, guid: 39e3418d6b9e6b64e982eff22394e99a, type: 3}
-      propertyPath: maxMidi
-      value: 105
-      objectReference: {fileID: 0}
-    - target: {fileID: 7248022408201706359, guid: 39e3418d6b9e6b64e982eff22394e99a, type: 3}
-      propertyPath: minMidi
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 7248022408201706359, guid: 39e3418d6b9e6b64e982eff22394e99a, type: 3}
       propertyPath: xOffset
       value: 5
