@@ -5014,7 +5014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStatus
   isFinished: 0
-  maxHP: 4
+  maxHP: 2000
   OnPlayerDamaged: {fileID: 11400000, guid: 9ade48c046ee0a241af88054855741f4, type: 2}
   playerStatusViewPrefab: {fileID: 4254418689079447965, guid: f16240a0a6acdce4a8743fae508df648, type: 3}
   styles:

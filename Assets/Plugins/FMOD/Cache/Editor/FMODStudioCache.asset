@@ -229,7 +229,7 @@ MonoBehaviour:
   Path: FMod/FLICKIWP/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639113650794247303
+  lastModified: 639113688139286081
   FileSizes:
   - Name: Desktop
     Value: 11208576
@@ -285,7 +285,7 @@ MonoBehaviour:
   - {fileID: -1691886353046361240}
   StringsBanks:
   - {fileID: 3680248598389615930}
-  cacheTime: 639113650794261421
+  cacheTime: 639113688139306126
   cacheVersion: 131632
 --- !u!114 &3680248598389615930
 MonoBehaviour:
@@ -302,7 +302,7 @@ MonoBehaviour:
   Path: FMod/FLICKIWP/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639113650794261421
+  lastModified: 639113688139306126
   FileSizes:
   - Name: Desktop
     Value: 1196
