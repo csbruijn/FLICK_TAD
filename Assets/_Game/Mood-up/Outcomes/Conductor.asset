@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d75238216f0110443bc0c4584a805f93, type: 3}
+  m_Name: Conductor
+  m_EditorClassIdentifier: Assembly-CSharp::Outcomes
+  mySprite: {fileID: 21300000, guid: 82340c9a2cd2de549a0b49bbeabbffb4, type: 3}
+  OutcomeRef: 0
+  myName: a conductor
+  myDescription: 'As the name suggests, you are the one who oversees the big picture,
+    simultaneously not losing the details out of touch. You are a natural leader
+    and people look to you for direction as your authority comes with clarity and
+    confidence. You know how to make sure talents shine, sensing when to step in
+    and when to let them do their thing. Balance is everything for you: under your
+    supervision separate forces become a unified flow. Whatever happens, you retain
+    that amazing calmness and steadiness, always shaping scattered ideas into a brilliant
+    outcome. '
