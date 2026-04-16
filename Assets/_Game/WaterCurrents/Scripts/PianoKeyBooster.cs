@@ -1,6 +1,8 @@
 using MidiJack;
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class PianoKeyBooster : MonoBehaviour
 {
@@ -22,8 +24,7 @@ public class PianoKeyBooster : MonoBehaviour
     [SerializeField] private float fullHeight = 8f;
 
     [Header("Refs")]
-    [SerializeField]private GravityWell myGravityWell;
-    [SerializeField] private  FountainController myFountainController;
+    [SerializeField] private GeyserController myFountainController;
 
     [SerializeField] private float maxResource = 1f;
     private float resource; 
@@ -33,10 +34,6 @@ public class PianoKeyBooster : MonoBehaviour
         resource = maxResource; 
         mSP = GetComponent<SpriteRenderer>();
         mSP.color = myColor;
-        //myGravityWell = GetComponentInChildren<GravityWell>();
-        myGravityWell.gameObject.SetActive(true);
-        myGravityWell.SetStrenght(BoostStrength);
-        myGravityWell.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -77,7 +74,7 @@ public class PianoKeyBooster : MonoBehaviour
         if (channel != myChannel) return;
         if (note != myNote) return;
         
-        ActivateIndicator();
+        //ActivateIndicator();
         Debug.Log($"{note} is pressed ");
         noteIsOn = true;
 
@@ -92,30 +89,13 @@ public class PianoKeyBooster : MonoBehaviour
 
     private void ActivateBooster()
     {
-        
-        myFountainController.SetHeight(fullHeight);
-        //DeacivateIndicator();
-        myGravityWell.gameObject.SetActive(true);
+        myFountainController.ActivateGeyser();
     }
 
     private void DisableBooster()
     {
-        myFountainController.GetComponent<ParticleSystem>().Stop();
-
-
-        myGravityWell.gameObject.SetActive(false);
+        myFountainController.DeactivateGeyser(); 
     }
-    private void ActivateIndicator()
-    {
-        myFountainController.GetComponent<ParticleSystem>().Play();
-        myFountainController.SetHeight(indicatorHeight);
-         //mSP.color = Color.lightGreen;
-    }
-
-    //private void DeacivateIndicator()
-    //{
-    //    mSP.color = myColor;
-    //}
 
     void OnEnable()
     {
@@ -128,4 +108,38 @@ public class PianoKeyBooster : MonoBehaviour
         MidiMaster.noteOnDelegate -= NoteOn;
         MidiMaster.noteOffDelegate -= NoteOff;
     }
+
+    public void NoteOnTest()
+    {
+        Debug.Log($"Test is pressed ");
+        noteIsOn = true;
+        StartCoroutine(DelayedActivation());
+    }
+
+    public void NoteOffTest()
+    {
+        noteIsOn = false;
+    }
+
 }
+
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(PianoKeyBooster))]
+public class PianoKeyBoosterEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        DrawDefaultInspector();
+
+        PianoKeyBooster booster = (PianoKeyBooster)target;
+        EditorGUI.BeginDisabledGroup(!Application.isPlaying);
+        if (GUILayout.Button("ON"))
+        {
+            booster.NoteOnTest();
+        }
+        if (GUILayout.Button("OFF")) booster.NoteOffTest();
+
+    }
+}
+#endif

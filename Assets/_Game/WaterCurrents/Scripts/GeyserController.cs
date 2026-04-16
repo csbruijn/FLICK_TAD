@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class GeyserController : MonoBehaviour
 {
@@ -18,15 +20,33 @@ public class GeyserController : MonoBehaviour
 
     [SerializeField] private BoxCollider2D triggerZone;
 
+    bool isGrowing = false; 
+
     void Start()
     {
-        head = Instantiate(headPrefab, transform);
     }
 
     public void ActivateGeyser()
-    {
-        Grow();
+    {        isGrowing = true;
+        if (head != null) Destroy(head);
+        head = Instantiate(headPrefab, transform);
+
     }
+
+    public void DeactivateGeyser() => isGrowing = false;
+
+    private void Update()
+    {
+        if (isGrowing)
+            Grow();
+
+        if (!isGrowing && currentHeight > 0)
+        {
+            Debug.Log("Dissipate!");
+            Dissipate();       
+        }
+    }
+
 
     void Grow()
     {
@@ -43,16 +63,40 @@ public class GeyserController : MonoBehaviour
         }
 
         UpdatePositions();
+        UpdateCollider();
+    }
 
+    void Dissipate()
+    {
+        currentHeight -= growSpeed * Time.deltaTime * 3;
 
+        int neededTiles = Mathf.FloorToInt(currentHeight / tileHeight);
 
-        void UpdateCollider()
+        if (currentHeight <= 0)
         {
-            float height = bodyTiles.Count * tileHeight;
+            if (bodyTiles.Count> 0) {
+                Destroy(bodyTiles[0]);
+                bodyTiles.RemoveAt(0);
+            }
+            bodyTiles.Clear();
+            Destroy(head);
+            head = null;
+            currentHeight = 0;
 
-            triggerZone.size = new Vector2(triggerZone.size.x, height);
-            triggerZone.offset = new Vector2(0, height / 2f);
+            UpdatePositions();
+            UpdateCollider();
+            return; 
         }
+
+        if (bodyTiles.Count > neededTiles && bodyTiles.Count > 0 )
+        {
+            Destroy(bodyTiles[0]);
+            bodyTiles.RemoveAt(0);
+        }
+
+
+        UpdatePositions();
+        UpdateCollider();
     }
 
 
@@ -71,6 +115,16 @@ public class GeyserController : MonoBehaviour
         bodyTiles.Add(tile);
     }
 
+    void UpdateCollider()
+    {
+
+        float headHeight = 3; // eyeballed to get ready for demo
+        float height = bodyTiles.Count * tileHeight + headHeight;
+
+        triggerZone.size = new Vector2(triggerZone.size.x, height);
+        triggerZone.offset = new Vector2(0, height / 2f);
+    }
+
     void UpdatePositions()
     {
         // position body tiles
@@ -86,3 +140,4 @@ public class GeyserController : MonoBehaviour
         }
     }
 }
+
