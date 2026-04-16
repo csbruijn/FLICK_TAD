@@ -151,7 +151,7 @@ BoxCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0.1953125, y: 0.15625, z: 0.1953125, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
@@ -169,6 +169,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7250598490509511192}
     m_Modifications:
+    - target: {fileID: 5207706827650786989, guid: 23b9810f674d62a428c6c429090eeb55, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207706827650786989, guid: 23b9810f674d62a428c6c429090eeb55, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5207706827650786989, guid: 23b9810f674d62a428c6c429090eeb55, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5207706827650786989, guid: 23b9810f674d62a428c6c429090eeb55, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -208,6 +220,14 @@ PrefabInstance:
     - target: {fileID: 5207706827650786989, guid: 23b9810f674d62a428c6c429090eeb55, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730598552342520894, guid: 23b9810f674d62a428c6c429090eeb55, type: 3}
+      propertyPath: growSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730598552342520894, guid: 23b9810f674d62a428c6c429090eeb55, type: 3}
+      propertyPath: maxHeight
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8366236932886546933, guid: 23b9810f674d62a428c6c429090eeb55, type: 3}
       propertyPath: m_Name

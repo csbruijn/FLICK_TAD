@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1604418355905565512, guid: 112ffb96e30e5294c915649f84e2ccf6, type: 3}
+      propertyPath: growSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1604418355905565512, guid: 112ffb96e30e5294c915649f84e2ccf6, type: 3}
+      propertyPath: maxHeight
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 1716919806491054437, guid: 112ffb96e30e5294c915649f84e2ccf6, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -28,6 +36,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoosterKeyFlat
       objectReference: {fileID: 0}
+    - target: {fileID: 2247831874202973082, guid: 112ffb96e30e5294c915649f84e2ccf6, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2247831874202973082, guid: 112ffb96e30e5294c915649f84e2ccf6, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2247831874202973082, guid: 112ffb96e30e5294c915649f84e2ccf6, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2247831874202973082, guid: 112ffb96e30e5294c915649f84e2ccf6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 2247831874202973082, guid: 112ffb96e30e5294c915649f84e2ccf6, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 2998510198438956009, guid: 112ffb96e30e5294c915649f84e2ccf6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b809e20c63a7f9f49805320204b15b0c, type: 3}
     - target: {fileID: 2998510198438956009, guid: 112ffb96e30e5294c915649f84e2ccf6, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -66,11 +98,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7250598490509511192, guid: 112ffb96e30e5294c915649f84e2ccf6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7250598490509511192, guid: 112ffb96e30e5294c915649f84e2ccf6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.61
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7250598490509511192, guid: 112ffb96e30e5294c915649f84e2ccf6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -131,6 +163,10 @@ PrefabInstance:
     - target: {fileID: 8749623897514516795, guid: 112ffb96e30e5294c915649f84e2ccf6, type: 3}
       propertyPath: fullHeight
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8749623897514516795, guid: 112ffb96e30e5294c915649f84e2ccf6, type: 3}
+      propertyPath: maxResource
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8749623897514516795, guid: 112ffb96e30e5294c915649f84e2ccf6, type: 3}
       propertyPath: BoostStrength

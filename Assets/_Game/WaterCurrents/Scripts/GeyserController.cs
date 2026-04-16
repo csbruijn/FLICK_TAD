@@ -119,7 +119,9 @@ public class GeyserController : MonoBehaviour
     {
 
         float headHeight = 3; // eyeballed to get ready for demo
-        float height = bodyTiles.Count * tileHeight + headHeight;
+        float height = bodyTiles.Count * tileHeight;
+        if (bodyTiles.Count > 0) height += headHeight;
+
 
         triggerZone.size = new Vector2(triggerZone.size.x, height);
         triggerZone.offset = new Vector2(0, height / 2f);
