@@ -46,6 +46,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelsManager
   playData: {fileID: 11400000, guid: e4cda5531f908f346bd19ab7a41b37b3, type: 2}
+  backgroundAnimator: {fileID: 0}
+  fadeOverlay: {fileID: 0}
+  exitAnimationDuration: 1.2
+  fadeDuration: 0.6
+  finishDelay: 1
 --- !u!114 &1315473106257161279
 MonoBehaviour:
   m_ObjectHideFlags: 0

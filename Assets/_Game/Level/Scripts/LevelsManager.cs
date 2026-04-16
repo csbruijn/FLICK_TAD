@@ -14,7 +14,7 @@ public class LevelsManager : MonoBehaviour
     public float exitAnimationDuration = 1.2f;
     public float fadeDuration = 0.6f;
 
-    [SerializeField] private float finishDelay = 5f;
+    [SerializeField] private float finishDelay = 1f;
 
     private void Awake()
     {
