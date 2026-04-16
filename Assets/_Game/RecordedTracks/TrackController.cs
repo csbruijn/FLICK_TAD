@@ -32,7 +32,7 @@ public class TrackController : MonoBehaviour
     [SerializeField] private GameEvent OnSirenSplashAttack;
     [SerializeField] private GameEvent OnEndNotePlayed;
 
-    [Header("Events")]
+    [Header("songIndex")]
     int song;    
 
     private void Awake()
@@ -53,15 +53,30 @@ public class TrackController : MonoBehaviour
         return Random.Range(0, 3);
     }
 
+    //private void LoadMidi(int song)
+    //{
+    //    switch (song)
+    //    {
+    //        case 0: midiFile = MidiFile.Read(IDK_MidifilePath); Debug.Log("MIDI : IDK"); break;
+    //        case 1: midiFile = MidiFile.Read(TW_MidifilePath); Debug.Log("MIDI : TW"); break;
+    //        case 2: midiFile = MidiFile.Read(GS_MidifilePath); Debug.Log("MIDI : GS"); break;
+    //        default: midiFile = MidiFile.Read(IDK_MidifilePath); Debug.LogWarning("track out of bounds; falling back to 0"); break;
+    //    }
+    //    tempoMap = midiFile.GetTempoMap();
+    //}
+
     private void LoadMidi(int song)
     {
-        switch (song)
+        string fileName = song switch
         {
-            case 0: midiFile = MidiFile.Read(IDK_MidifilePath); Debug.Log("MIDI : IDK"); break;
-            case 1: midiFile = MidiFile.Read(TW_MidifilePath); Debug.Log("MIDI : TW"); break;
-            case 2: midiFile = MidiFile.Read(GS_MidifilePath); Debug.Log("MIDI : GS"); break;
-            default: midiFile = MidiFile.Read(IDK_MidifilePath); Debug.LogWarning("track out of bounds; falling back to 0"); break;
-        }
+            0 => "IDKBuild.mid",
+            1 => "TWBuild.mid",
+            2 => "GSBuild.mid",
+            _ => "IDKBuild.mid"
+        };
+
+        string path = System.IO.Path.Combine(Application.streamingAssetsPath, fileName);
+        midiFile = MidiFile.Read(path);
         tempoMap = midiFile.GetTempoMap();
     }
 
